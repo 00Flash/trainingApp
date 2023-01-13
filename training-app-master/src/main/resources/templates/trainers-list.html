@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer App </title>
+
+    <link th:href="@{/css/main.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <ul class="nav_links">
+            <li><a th:href="@{/}" class="btn">Menu</a></li>
+
+            <li><a th:href="@{/diet}" class="btn">Diet List</a></li>
+            <li><a th:href="@{/exercises}" class="btn">Exercises List</a></li>
+            <li><a th:href="@{/login}"><button id="redirect-sign-up">Log out</button></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <div class="add-user-3">
+    <table class="tabela">
+        <p class="form-header2">Trainer list:</p>
+        <tr class="kolor">
+            <td>User name</td>
+            <td>Email</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Phone number</td>
+            <td>Description</td>
+        </tr>
+        <tr th:each="trainer: ${trainers}">
+            <td th:text="${trainer.username}">
+            <td th:text="${trainer.email}">
+            <td th:text="${trainer.firstName}">
+            <td th:text="${trainer.lastName}">
+            <td th:text="${trainer.phoneNumber}">
+            <td th:text="${trainer.description}">
+            <td><a th:href="@{/request-trainer/{trainerId}(trainerId=${trainer.trainerId})}"> <button action="" class="dodaj" type="submit" value="">Add</button></a></td>
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>

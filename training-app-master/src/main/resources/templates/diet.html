@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainer App </title>
+
+  <link th:href="@{/css/main.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <ul class="nav_links">
+    <li><a th:href="@{/}" class="btn">Menu</a></li>
+
+    <li><a th:href="@{/diet}" class="btn">Diet</a></li>
+    <li><a th:href="@{/exercises}" class="btn">Exercises</a></li>
+    <li><a th:href="@{/login}"><button id="redirect-sign-up">Log out</button></a></li>
+  </ul>
+</nav>
+
+
+
+
+
+<div class="add-user-3">
+  <table class="tabela">
+    <p class="form-header2">Trainer list:</p>
+    <tr class="kolor">
+      <td>Kcal</td>
+      <td>Fat</td>
+      <td>Proteins</td>
+      <td>Carbon</td>
+      <td>Dishes</td>
+      <td>Date</td>
+    </tr>
+    <tr th:object="$diet">
+      <td th:text="${diet.kcal}">
+      <td th:text="${diet.fat}">
+      <td th:text="${diet.proteins}">
+      <td th:text="${diet.carbon}">
+      <td th:text="${diet.dishes}">
+      <td th:text="${diet.date}">
+      <td > <input name="" class="dodaj" type="submit" value="Add"></td>
+    </tr>
+
+  </table>
+</div>
+</body>
+</html>

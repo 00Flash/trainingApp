@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer App </title>
+
+    <link th:href="@{/css/main.css}" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<div class="add-user-2">
+    <p>Menu</p>
+    <div class="menu" >
+
+        <div th:unless="${user.isTrainer}" >
+
+            <a th:href="@{/become-trainer}"><button class="wysrod" type="submit">Become trainer</button></a>
+
+        </div>
+
+        <div th:unless="${user.isTrainer}" >
+
+            <a th:href="@{/show-trainers}"><button type="submit">Show trainers</button></a>
+
+        </div>
+
+        <div th:if="${user.isTrainer}" >
+
+            <a th:href="@{/user-trainer}"><button type="submit">Show users</button></a>
+
+        </div>
+
+        <div th:unless="${user.isTrainer}" >
+
+            <a th:href="@{/user-trainer}"><button type="submit">Show diet and workout</button></a>
+
+        </div>
+
+
+
+        <a th:href="@{/login}"><button type ="submit">Log out</button></a>
+    </div>
+</div>
+</body>
+</html>

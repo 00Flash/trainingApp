@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainer App </title>
+
+  <link th:href="@{/css/main.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+
+<nav>
+  <ul class="nav_links">
+    <li><a th:href="@{/}" class="btn">Menu</a></li>
+    <li><a th:href="@{/diet}" class="btn">Diet List</a></li>
+    <li><a th:href="@{/exercises}" class="btn">Exercises List</a></li>
+    <li><a th:href="@{/login}"><button id="redirect-sign-up">Log out</button></a></li>
+  </ul>
+</nav>
+
+
+
+<div class="add-user-2">
+  <p>Enter your details:</p>
+  <form  th:object="${diet}" action="#" th:action="@{/user-trainer/${userTrainerId}/diet}" method="POST">
+    <input type="text" placeholder="Kcal"
+           id="kcal" th:field="*{kcal}">
+    <input type="text" placeholder="Fat"
+           id="fat" th:field="*{fat}">
+    <input type="text" placeholder="Proteins"
+           id="proteins" th:field="*{proteins}">
+    <input type="text" placeholder="Carbon"
+           id="carbon" th:field="*{carbon}">
+    <input type="text" placeholder="Dishes"
+           id="dishes" th:field="*{dishes}">
+    <input type="text" placeholder="Date"
+           id="date" th:field="*{date}">
+    <br/><br/>
+    <button type="submit" class="button-submit">Continue</button>
+  </form>
+</div>
+</body>
+</html>
